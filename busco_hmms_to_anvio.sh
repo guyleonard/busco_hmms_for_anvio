@@ -1,4 +1,4 @@
-#!/bin/env basg
+#!/bin/env bash
 
 ## Get source HMMs
 wget https://busco.ezlab.org/datasets/eukaryota_odb9.tar.gz
