@@ -21,7 +21,7 @@ for f in ../eukaryota_odb9/hmms/*.hmm; do gene=$(basename ${f%.*}); echo "$gene 
 echo "singlecopy:eukarya" > kind.txt
 
 ## Make reference.txt
-echo "https://busco.ezlab.org/ & http://github.com/guyleonard" > reference.txt
+echo "https://busco.ezlab.org/ & https://github.com/guyleonard/busco_hmms_for_anvio" > reference.txt
 
 ## Make target.txt
 echo "AA:GENE" > target.txt
