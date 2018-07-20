@@ -27,7 +27,7 @@ main () {
     gzip $dir_name/genes.hmm
 
     ## Make genes.txt list
-    echo "gene      accession       hmmsource" > $dir_name/genes.txt
+    echo "gene	accession	hmmsource" > $dir_name/genes.txt
     for f in $(basename ${filename%%.*})/hmms/*.hmm; do gene=$(basename ${f%.*}); echo "$gene	$gene	Busco.ezlab" >> $dir_name/genes.txt; done
 
     ## Make kind.txt
@@ -50,7 +50,7 @@ main () {
 get_tarball () {
     ## Get source HMMs
     echo "Retrieving $1"
-    if [-f $1]; then
+    if [ -f $1 ]; then
       rm $1
     else
       wget $1
