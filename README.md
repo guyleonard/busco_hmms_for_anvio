@@ -1,6 +1,6 @@
 Check out [Assessing the completion of eukaryotic bins with anvi'o](http://merenlab.org/2018/05/05/eukaryotic-single-copy-core-genes/) on why you may want to do this...
 
-# Make BUSCO HMMs useable in Anvi'o
+# Making BUSCO HMMs useable in Anvi'o
 Clone the repo or download the script directly.
 
 Then, simply run the bash script with a URL for one of the BUSCO datasets, e.g.
