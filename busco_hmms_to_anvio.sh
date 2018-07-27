@@ -6,6 +6,7 @@ OPTIND=1
 # initialise
 input_url=""
 input_file=""
+kind="singlecopy:eukarya"
 
 main () {
     # Set filename to input from getopts
@@ -31,10 +32,10 @@ main () {
     for f in $(basename ${filename%%.*})/hmms/*.hmm; do gene=$(basename ${f%.*}); echo "$gene	$gene	Busco.ezlab" >> $dir_name/genes.txt; done
 
     ## Make kind.txt
-    echo "singlecopy:eukarya" > $dir_name/kind.txt
+    echo $kind > $dir_name/kind.txt
 
     ## Make reference.txt
-    echo "https://busco.ezlab.org/ & http://github.com/guyleonard" > $dir_name/reference.txt
+    echo "https://busco.ezlab.org/ & https://github.com/guyleonard/busco_hmms_for_anvio" > $dir_name/reference.txt
 
     ## Make target.txt
     echo "AA:GENE" > $dir_name/target.txt
@@ -67,7 +68,7 @@ show_help () {
     echo "$0 [-u url to tarball] |  [-f location of local file]"
 }
 
-while getopts "h?u:f:" opt; do
+while getopts "h?u:f:k:" opt; do
     case "$opt" in
     h|\?) show_help
           exit 0
@@ -80,5 +81,6 @@ while getopts "h?u:f:" opt; do
     f)  input_file=$OPTARG
 	main $input_file
         ;;
+    k) kind=$OPTARG
     esac
 done
